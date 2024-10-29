@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>הפרויקט של גברת פלפת</title>
+    <!-- גופנים מ-Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome לאייקונים -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- עיצוב מותאם אישית -->
+    <style>
+        body {
+            font-family: 'Heebo', Arial, sans-serif;
+            direction: rtl;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 40px 0;
+            color: #fff;
+            font-size: 36px;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        label {
+            display: block;
+            margin-top: 25px;
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+        }
+        .options {
+            margin-top: 15px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #555;
+        }
+        .options input[type="radio"],
+        .options input[type="checkbox"] {
+            accent-color: #667eea;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .options input[type="text"],
+        .textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 40px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        .question-icon {
+            margin-left: 10px;
+            color: #667eea;
+        }
+        .question {
+            margin-bottom: 30px;
+            animation: fadeInUp 0.5s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>הפרויקט של גברת פלפת</h1>
+<div class="form-container">
+<form action="https://formspree.io/f/mnnqjype" method="POST" id="questionnaire">
+
+    <!-- שאלה 1 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-hourglass-start question-icon"></i>
+            1. תוך כמה זמן היית רוצה להגיע למשקל היעד של 52 ק"ג?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="time_frame" value="פחות מחודש">פחות מחודש</label>
+            <label><input type="radio" name="time_frame" value="1-2 חודשים">1-2 חודשים</label>
+            <label><input type="radio" name="time_frame" value="3-6 חודשים">3-6 חודשים</label>
+            <label><input type="radio" name="time_frame" value="אין טווח זמן מוגדר">אין טווח זמן מוגדר</label>
+        </div>
+    </div>
+
+    <!-- שאלה 2 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-tachometer-alt question-icon"></i>
+            2. האם את מעדיפה תהליך מהיר ואינטנסיבי או תהליך איטי ומתון שמתאים לקצב שלך?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="progress_rate" value="מהיר ואינטנסיבי">מהיר ואינטנסיבי</label>
+            <label><input type="radio" name="progress_rate" value="איטי ומתון">איטי ומתון</label>
+            <label><input type="radio" name="progress_rate" value="בינוני">בינוני</label>
+        </div>
+    </div>
+
+    <!-- שאלה 3 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-utensils question-icon"></i>
+            3. מהם המאכלים והמשקאות שאת הכי אוהבת? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="favorite_foods[]" value="פירות">פירות</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="ירקות">ירקות</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="עוף">עוף</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="דגים">דגים</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="בשר אדום">בשר אדום</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="מוצרי חלב">מוצרי חלב</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="דגנים מלאים">דגנים מלאים</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="קטניות">קטניות</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="אגוזים וזרעים">אגוזים וזרעים</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="מתוקים">מתוקים</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="מאפים ולחמים">מאפים ולחמים</label>
+            <label><input type="checkbox" name="favorite_foods[]" value="חטיפים מלוחים">חטיפים מלוחים</label>
+            אחרות: <input type="text" name="favorite_foods_other">
+        </div>
+    </div>
+
+    <!-- שאלה 4 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-ban question-icon"></i>
+            4. האם יש מאכלים שאת מעדיפה להימנע מהם או שלא אוהבת? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="avoid_foods[]" value="גלוטן">גלוטן</label>
+            <label><input type="checkbox" name="avoid_foods[]" value="מוצרי חלב">מוצרי חלב</label>
+            <label><input type="checkbox" name="avoid_foods[]" value="סוכר">סוכר</label>
+            <label><input type="checkbox" name="avoid_foods[]" value="מזון מעובד">מזון מעובד</label>
+            <label><input type="checkbox" name="avoid_foods[]" value="מאכלים מטוגנים">מאכלים מטוגנים</label>
+            אחרות: <input type="text" name="avoid_foods_other">
+        </div>
+    </div>
+
+    <!-- שאלה 5 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-utensils question-icon"></i>
+            5. כמה ארוחות את אוכלת ביום בדרך כלל?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="meals_per_day" value="1-2 ארוחות">1-2 ארוחות</label>
+            <label><input type="radio" name="meals_per_day" value="3 ארוחות">3 ארוחות</label>
+            <label><input type="radio" name="meals_per_day" value="4-5 ארוחות קטנות">4-5 ארוחות קטנות</label>
+        </div>
+    </div>
+
+    <!-- שאלה 6 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-cookie-bite question-icon"></i>
+            6. האם את נוהגת לנשנש בין הארוחות?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="snacking" value="כן">כן</label>
+            <label><input type="radio" name="snacking" value="לא">לא</label>
+        </div>
+    </div>
+
+    <!-- שאלה 6.1 -->
+    <div class="question hidden" id="snack-options">
+        <label>
+            <i class="fas fa-seedling question-icon"></i>
+            אם כן, מה את נוהגת לנשנש? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="snack_items[]" value="פירות">פירות</label>
+            <label><input type="checkbox" name="snack_items[]" value="ירקות">ירקות</label>
+            <label><input type="checkbox" name="snack_items[]" value="חטיפים בריאים">חטיפים בריאים</label>
+            <label><input type="checkbox" name="snack_items[]" value="מתוקים">מתוקים</label>
+            <label><input type="checkbox" name="snack_items[]" value="חטיפים מלוחים">חטיפים מלוחים</label>
+            אחרות: <input type="text" name="snack_items_other">
+        </div>
+    </div>
+
+    <!-- שאלה 7 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-glass-whiskey question-icon"></i>
+            7. כמה מים את שותה ביום?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="water_intake" value="פחות מ-1 ליטר">פחות מ-1 ליטר</label>
+            <label><input type="radio" name="water_intake" value="1-2 ליטר">1-2 ליטר</label>
+            <label><input type="radio" name="water_intake" value="יותר מ-2 ליטר">יותר מ-2 ליטר</label>
+        </div>
+    </div>
+
+    <!-- שאלה 8 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-coffee question-icon"></i>
+            8. אילו משקאות נוספים את שותה במהלך היום? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="other_drinks[]" value="קפה עם סוכר">קפה עם סוכר</label>
+            <label><input type="checkbox" name="other_drinks[]" value="קפה ללא סוכר">קפה ללא סוכר</label>
+            <label><input type="checkbox" name="other_drinks[]" value="תה עם סוכר">תה עם סוכר</label>
+            <label><input type="checkbox" name="other_drinks[]" value="תה ללא סוכר">תה ללא סוכר</label>
+            <label><input type="checkbox" name="other_drinks[]" value="משקאות מוגזים">משקאות מוגזים</label>
+            <label><input type="checkbox" name="other_drinks[]" value="מיצים טבעיים">מיצים טבעיים</label>
+            <label><input type="checkbox" name="other_drinks[]" value="מיצים ממותקים">מיצים ממותקים</label>
+            <label><input type="checkbox" name="other_drinks[]" value="אלכוהול">אלכוהול</label>
+            אחרות: <input type="text" name="other_drinks_other">
+        </div>
+    </div>
+
+    <!-- שאלה 9 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-blender question-icon"></i>
+            9. האם את אוהבת לבשל ומבשלת בבית?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="cooking" value="אוהבת ומבשלת באופן קבוע">אוהבת ומבשלת באופן קבוע</label>
+            <label><input type="radio" name="cooking" value="מבשלת מדי פעם">מבשלת מדי פעם</label>
+            <label><input type="radio" name="cooking" value="מעדיפה אוכל מוכן או משלוחים">מעדיפה אוכל מוכן או משלוחים</label>
+        </div>
+    </div>
+
+    <!-- שאלה 10 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-dumbbell question-icon"></i>
+            10. האם יש לך ציוד כושר בבית? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="equipment[]" value="מזרן יוגה/פילאטיס">מזרן יוגה/פילאטיס</label>
+            <label><input type="checkbox" name="equipment[]" value="גומיות התנגדות">גומיות התנגדות</label>
+            <label><input type="checkbox" name="equipment[]" value="משקולות יד">משקולות יד</label>
+            <label><input type="checkbox" name="equipment[]" value="הליכון או אופניים נייחים">הליכון או אופניים נייחים</label>
+            <label><input type="checkbox" name="equipment[]" value="כדור פיזיו">כדור פיזיו</label>
+            <label><input type="checkbox" name="equipment[]" value="אין ציוד">אין ציוד</label>
+            אחרות: <input type="text" name="equipment_other">
+        </div>
+    </div>
+
+    <!-- שאלה 11 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-running question-icon"></i>
+            11. אילו סוגי פעילות גופנית את נהנית לבצע? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="activities[]" value="יוגה">יוגה</label>
+            <label><input type="checkbox" name="activities[]" value="פילאטיס">פילאטיס</label>
+            <label><input type="checkbox" name="activities[]" value="אימוני אירובי">אימוני אירובי</label>
+            <label><input type="checkbox" name="activities[]" value="ריקוד">ריקוד</label>
+            <label><input type="checkbox" name="activities[]" value="אימוני כוח">אימוני כוח</label>
+            <label><input type="checkbox" name="activities[]" value="הליכה במקום">הליכה במקום</label>
+            <label><input type="checkbox" name="activities[]" value="מתיחות והרפיה">מתיחות והרפיה</label>
+            אחרות: <input type="text" name="activities_other">
+        </div>
+    </div>
+
+    <!-- שאלה 12 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-clock question-icon"></i>
+            12. כמה זמן ביום את מוכנה להקדיש לפעילות גופנית?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="exercise_time" value="פחות מ-15 דקות">פחות מ-15 דקות</label>
+            <label><input type="radio" name="exercise_time" value="15-30 דקות">15-30 דקות</label>
+            <label><input type="radio" name="exercise_time" value="30-60 דקות">30-60 דקות</label>
+            <label><input type="radio" name="exercise_time" value="יותר משעה">יותר משעה</label>
+        </div>
+    </div>
+
+    <!-- שאלה 13 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-heartbeat question-icon"></i>
+            13. מהו הניסיון שלך בפעילות גופנית?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="exercise_experience" value="מתאמנת באופן קבוע">מתאמנת באופן קבוע</label>
+            <label><input type="radio" name="exercise_experience" value="מתאמנת מדי פעם">מתאמנת מדי פעם</label>
+            <label><input type="radio" name="exercise_experience" value="חדשה בתחום">חדשה בתחום</label>
+        </div>
+    </div>
+
+    <!-- שאלה 14 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-notes-medical question-icon"></i>
+            14. האם יש לך מגבלות פיזיות או רפואיות שיש להתחשב בהן? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="physical_limitations[]" value="אין מגבלות">אין מגבלות</label>
+            <label><input type="checkbox" name="physical_limitations[]" value="בעיות גב">בעיות גב</label>
+            <label><input type="checkbox" name="physical_limitations[]" value="בעיות ברכיים">בעיות ברכיים</label>
+            <label><input type="checkbox" name="physical_limitations[]" value="בעיות מפרקים">בעיות מפרקים</label>
+            <label><input type="checkbox" name="physical_limitations[]" value="פציעות קודמות">פציעות קודמות</label>
+            אחרות: <input type="text" name="physical_limitations_other">
+        </div>
+    </div>
+
+    <!-- שאלה 15 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-apple-alt question-icon"></i>
+            15. האם יש לך מגבלות תזונתיות או העדפות מיוחדות? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="dietary_restrictions[]" value="אין מגבלות">אין מגבלות</label>
+            <label><input type="checkbox" name="dietary_restrictions[]" value="צמחונית">צמחונית</label>
+            <label><input type="checkbox" name="dietary_restrictions[]" value="טבעונית">טבעונית</label>
+            <label><input type="checkbox" name="dietary_restrictions[]" value="ללא גלוטן">ללא גלוטן</label>
+            <label><input type="checkbox" name="dietary_restrictions[]" value="ללא לקטוז">ללא לקטוז</label>
+            <label><input type="checkbox" name="dietary_restrictions[]" value="כשרות">כשרות</label>
+            אחרות: <input type="text" name="dietary_restrictions_other">
+        </div>
+    </div>
+
+    <!-- שאלה 16 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-shopping-basket question-icon"></i>
+            16. האם יש לך גישה למצרכי מזון טריים?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="access_to_fresh_food" value="כן">כן</label>
+            <label><input type="radio" name="access_to_fresh_food" value="לא">לא</label>
+        </div>
+    </div>
+
+    <!-- שאלה 17 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-truck question-icon"></i>
+            17. האם את יכולה להזמין מצרכים או לצאת לקניות?
+        </label>
+        <div class="options">
+            <label><input type="radio" name="can_shop" value="כן">כן</label>
+            <label><input type="radio" name="can_shop" value="לא">לא</label>
+        </div>
+    </div>
+
+    <!-- שאלה 18 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-motivation question-icon"></i>
+            18. מה הכי מניע אותך בתהליך הזה? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="motivation[]" value="שיפור הבריאות הכללית">שיפור הבריאות הכללית</label>
+            <label><input type="checkbox" name="motivation[]" value="תחושה טובה יותר עם עצמך">תחושה טובה יותר עם עצמך</label>
+            <label><input type="checkbox" name="motivation[]" value="שיפור המראה החיצוני">שיפור המראה החיצוני</label>
+            <label><input type="checkbox" name="motivation[]" value="העלאת הביטחון העצמי">העלאת הביטחון העצמי</label>
+            <label><input type="checkbox" name="motivation[]" value="הכנה לאירוע מיוחד">הכנה לאירוע מיוחד</label>
+            אחרות: <input type="text" name="motivation_other">
+        </div>
+    </div>
+
+    <!-- שאלה 19 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-hands-helping question-icon"></i>
+            19. איך את מעדיפה לקבל תמיכה ועידוד? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="support_preference[]" value="שיחות טלפון">שיחות טלפון</label>
+            <label><input type="checkbox" name="support_preference[]" value="הודעות טקסט">הודעות טקסט</label>
+            <label><input type="checkbox" name="support_preference[]" value="מעקב משותף באפליקציה">מעקב משותף באפליקציה</label>
+            אחרות: <input type="text" name="support_preference_other">
+        </div>
+    </div>
+
+    <!-- שאלה 20 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-bullseye question-icon"></i>
+            20. מה יכול לעזור לך להישאר ממוקדת ומוטיבציה? (סמני את כל האפשרויות הרלוונטיות)
+        </label>
+        <div class="options">
+            <label><input type="checkbox" name="stay_focused[]" value="הצבת יעדים קטנים וברורים">הצבת יעדים קטנים וברורים</label>
+            <label><input type="checkbox" name="stay_focused[]" value="מעקב אחר התקדמות">מעקב אחר התקדמות</label>
+            <label><input type="checkbox" name="stay_focused[]" value="תמיכה ממשפחה או חברים">תמיכה ממשפחה או חברים</label>
+            <label><input type="checkbox" name="stay_focused[]" value="פרסים לעצמך על השגת יעדים">פרסים לעצמך על השגת יעדים</label>
+            <label><input type="checkbox" name="stay_focused[]" value="לוח זמנים קבוע">לוח זמנים קבוע</label>
+            אחרות: <input type="text" name="stay_focused_other">
+        </div>
+    </div>
+
+    <!-- שאלה 21 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-comments question-icon"></i>
+            21. האם יש לך הערות או מידע נוסף שתרצי לשתף?
+        </label>
+        <textarea name="additional_info" class="textarea"></textarea>
+    </div>
+
+    <!-- שאלה 22 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-exclamation-triangle question-icon"></i>
+            22. מהם האתגרים הגדולים ביותר שאת מתמודדת איתם בתהליך הירידה במשקל?
+        </label>
+        <textarea name="challenges" class="textarea"></textarea>
+    </div>
+
+    <!-- שאלה 23 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-lightbulb question-icon"></i>
+            23. מה יכול לסייע לך להישאר מחויבת ומוטיבציה לאורך התהליך?
+        </label>
+        <textarea name="motivation_factors" class="textarea"></textarea>
+    </div>
+
+    <!-- שאלה 24 -->
+    <div class="question">
+        <label>
+            <i class="fas fa-star question-icon"></i>
+            24. האם יש מטרות נוספות שתרצי להשיג בתהליך הזה?
+        </label>
+        <textarea name="additional_goals" class="textarea"></textarea>
+    </div>
+
+    <!-- כפתור שליחה -->
+    <button type="submit" class="submit-btn">שלחי</button>
+
+</form>
+</div>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // הצגת שאלה מותנית
+        const snackingRadios = document.getElementsByName('snacking');
+        const snackOptions = document.getElementById('snack-options');
+
+        snackingRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'כן') {
+                    snackOptions.classList.remove('hidden');
+                } else {
+                    snackOptions.classList.add('hidden');
+                }
+            });
+        });
+
+        // אפקטי אנימציה לשאלות
+        const questions = document.querySelectorAll('.question');
+        questions.forEach((question, index) => {
+            question.style.animationDelay = `${index * 0.1}s`;
+        });
+    });
+</script>
+
+</body>
+</html>
